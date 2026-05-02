@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yagya | Wedmipandit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* CARD DESIGN */
+    .tv-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .tv-card {
+      display: flex;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: 0.3s;
+      margin-bottom: 30px;
+    }
+
+    .tv-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .tv-card img {
+      width: 250px;
+      object-fit: cover;
+    }
+
+    .tv-info {
+      padding: 20px;
+    }
+
+    .tv-info h3 {
+      margin-top: 0;
+      color: #b22222;
+    }
+
+    /* DETAILS SECTION */
+    .details {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      color: #b22222;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .highlight {
+      background: #fff5f5;
+      padding: 15px;
+      border-left: 5px solid #b22222;
+      margin: 20px 0;
+    }
+
+  </style>
+</head>
+
+<body>
+<div id="header"></div>
+<div class="container">
+
+  
+
+
+<!-- CARD -->
+  <a href="../contact.html" class="tv-link">
+        <div class="tv-card">
+        <img src="images/s7.webp">
+        <div class="tv-info">
+          <h3>Yagya</h3>
+          <p>Invoke Peace, Prosperity, and Positivity through Yagya</p>
+        </div>
+      </div>
+      </a>
+
+  <div id="yagya-details" class="details">
+  <h2>Yagya Ceremony (Yajna / Havan)</h2>
+
+  <p>
+    Yagya is one of the most powerful Vedic rituals performed to purify the
+    environment, remove negative energies, and invoke divine blessings. It is
+    believed that the sacred fire carries prayers directly to the divine,
+    bringing peace, prosperity, health, and spiritual growth.
+  </p>
+
+  <p>
+    We provide experienced pandits who perform Yagya with proper Vedic mantras,
+    correct विधि, and complete devotion, ensuring maximum spiritual benefits.
+  </p>
+
+  <hr>
+
+  <h3>Our Yagya Services Include:</h3>
+  <ul>
+    <li>शुभ मुहूर्त (auspicious timing) guidance</li>
+    <li>Ganesh Pooja and Sankalp</li>
+    <li>Vedic Yagya with proper मंत्रोच्चारण</li>
+    <li>Specific Yagya for health, peace, prosperity, and success</li>
+    <li>Navgraha Shanti Yagya</li>
+    <li>Customized Yagya as per your needs</li>
+    <li>Pooja samagri arrangement (if required)</li>
+  </ul>
+
+  <hr>
+
+  <h3>Why Choose Us?</h3>
+  <ul>
+    <li>Experienced and knowledgeable pandits</li>
+    <li>Authentic Vedic rituals with proper vidhi</li>
+    <li>Clear pronunciation of mantras</li>
+    <li>Peaceful and well-organized ceremony</li>
+    <li>On-time and reliable service</li>
+  </ul>
+
+  <div class="highlight">
+    <strong>Invite Divine Energy through Yagya</strong><br><br>
+    Fill your surroundings with positivity, purity, and spiritual energy through
+    a properly conducted Yagya, and experience peace, harmony, and blessings in your life.
+  </div>
+</div>
+
+
+</div>
+<div id="footer"></div>
+
+<script>
+     fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+
+      // Attach menu button after header loads
+      const menuBtn = document.querySelector(".menu-btn");
+      const navLinks = document.querySelector(".nav-links");
+
+      if(menuBtn){
+        menuBtn.onclick = () => {
+          navLinks.classList.toggle("show");
+        };
+      }
+    });
+
+  // Load Footer
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+</body>
+</html>
