@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Janmdivas | Wedmipandit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* CARD DESIGN */
+    .tv-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .tv-card {
+      display: flex;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: 0.3s;
+      margin-bottom: 30px;
+    }
+
+    .tv-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .tv-card img {
+      width: 250px;
+      object-fit: cover;
+    }
+
+    .tv-info {
+      padding: 20px;
+    }
+
+    .tv-info h3 {
+      margin-top: 0;
+      color: #b22222;
+    }
+
+    /* DETAILS SECTION */
+    .details {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      color: #b22222;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .highlight {
+      background: #fff5f5;
+      padding: 15px;
+      border-left: 5px solid #b22222;
+      margin: 20px 0;
+    }
+
+  </style>
+</head>
+
+<body>
+<div id="header"></div>
+<div class="container">
+
+  <!-- CARD -->
+  <a href="#vivah-details" class="tv-link">
+    <div class="tv-card">
+      <img src="images/s1.webp" alt="Vivah Ceremony">
+      <div class="tv-info">
+        <h3>Vivah (Wedding)</h3>
+        <p>Start Your Married Life with Divine Blessings and Perfect Rituals</p>
+      </div>
+    </div>
+  </a>
+
+  <div id="havan-details" class="details">
+  <h2>Hawan & Pooja Services</h2>
+
+  <p>
+    Hawan and Pooja are sacred Vedic rituals performed to purify the environment,
+    remove obstacles, and invite divine blessings into life. These rituals help
+    bring peace, positivity, health, and prosperity to individuals and families.
+  </p>
+
+  <p>
+    We provide experienced pandits who perform all types of Hawan and Pooja with
+    proper vidhi, devotion, and complete authenticity as per Vedic traditions.
+  </p>
+
+  <hr>
+
+  <h3>Our Services Include:</h3>
+  <ul>
+    <li>Ganesh Pooja</li>
+    <li>Lakshmi Pooja</li>
+    <li>Navgraha Shanti Pooja</li>
+    <li>Satyanarayan Katha</li>
+    <li>Hawan for peace, health, and prosperity</li>
+    <li>Special poojas for festivals and occasions</li>
+    <li>Personalized rituals as per your needs</li>
+  </ul>
+
+  <hr>
+
+  <h3>What We Offer:</h3>
+  <ul>
+    <li>Experienced and well-trained pandits</li>
+    <li>Proper Vedic mantras and rituals</li>
+    <li>Simple explanation of each step</li>
+    <li>Peaceful and organized ceremony</li>
+    <li>Pooja samagri arrangement (if required)</li>
+    <li>On-time and reliable service</li>
+  </ul>
+
+  <div class="highlight">
+    <strong>Bring Divine Energy into Your Life</strong><br><br>
+    Let sacred rituals fill your home with positivity, harmony, and divine blessings,
+    guiding you towards a peaceful and prosperous life.
+  </div>
+</div>
+
+  </div>
+
+</div>
+<div id="footer"></div>
+
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+
+  Promise.all([
+    fetch("../header.html").then(res => res.text()),
+    fetch("../footer.html").then(res => res.text())
+  ])
+    .then(([header, footer]) => {
+
+      // ✅ FIX: adjust image paths dynamically
+      const basePath = location.pathname.includes("Services") ? "../" : "";
+
+      const fixedHeader = header.replace(/src="images\//g, `src="${basePath}images/`);
+      const fixedFooter = footer.replace(/src="images\//g, `src="${basePath}images/`);
+
+      // Insert Header & Footer
+      document.getElementById("header").innerHTML = fixedHeader;
+      document.getElementById("footer").innerHTML = fixedFooter;
+
+      // ✅ Attach menu button AFTER header loads
+      const menuBtn = document.querySelector(".menu-btn");
+      const navLinks = document.querySelector(".nav-links");
+
+      if (menuBtn && navLinks) {
+        menuBtn.addEventListener("click", () => {
+          navLinks.classList.toggle("show");
+        });
+      }
+
+    })
+    .catch(error => console.error("Error loading header/footer:", error));
+
+});
+</script>
+</body>
+</html>

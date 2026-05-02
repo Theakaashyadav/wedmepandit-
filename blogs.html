@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blogs</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #fff7ed, #fbe3c2);
+  color: #2b1b12;
+  min-height: 100vh;
+}
+
+.blogs-section {
+  padding: 70px 8%;
+  text-align: center;
+}
+
+.blogs-section h1 {
+  font-size: 46px;
+  margin-bottom: 12px;
+  color: #6b240c;
+  font-weight: 800;
+}
+
+.blogs-section h1::after {
+  content: "";
+  display: block;
+  width: 85px;
+  height: 4px;
+  background: linear-gradient(90deg, #f97316, #7a2e13);
+  margin: 14px auto 45px;
+  border-radius: 20px;
+}
+
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.blog-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 24px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #222;
+  box-shadow: 0 18px 45px rgba(122, 46, 19, 0.18);
+  transition: all 0.35s ease;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.blog-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 28px 60px rgba(122, 46, 19, 0.28);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  transition: 0.45s ease;
+}
+
+.blog-card:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.8);
+}
+
+.blog-card h2 {
+  padding: 22px;
+  font-size: 22px;
+  line-height: 1.4;
+  color: #6b240c;
+  font-weight: 700;
+  background: #fff;
+}
+
+.blog-card h2::after {
+  content: "Read More →";
+  display: block;
+  margin-top: 14px;
+  font-size: 15px;
+  color: #f97316;
+  font-weight: 700;
+}
+
+.details-section {
+  max-width: 950px;
+  margin: 45px auto;
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 28px;
+  box-shadow: 0 20px 55px rgba(122, 46, 19, 0.18);
+}
+
+.back-btn {
+  display: inline-block;
+  margin-bottom: 28px;
+  text-decoration: none;
+  background: linear-gradient(135deg, #7a2e13, #f97316);
+  color: white;
+  padding: 12px 22px;
+  border-radius: 50px;
+  font-weight: 700;
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.35);
+  transition: 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: translateX(-5px);
+  box-shadow: 0 14px 30px rgba(249, 115, 22, 0.45);
+}
+
+.details-img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 24px;
+  margin-bottom: 30px;
+  box-shadow: 0 14px 35px rgba(0,0,0,0.18);
+}
+
+.details-section h1 {
+  font-size: 42px;
+  color: #6b240c;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.details-section p {
+  font-size: 19px;
+  line-height: 1.9;
+  color: #4b3328;
+}
+
+@media (max-width: 768px) {
+  .blogs-section {
+    padding: 45px 5%;
+  }
+
+  .blogs-section h1 {
+    font-size: 34px;
+  }
+
+  .blog-card img {
+    height: 210px;
+  }
+
+  .details-section {
+    margin: 20px;
+    padding: 22px;
+  }
+
+  .details-img {
+    height: 260px;
+  }
+
+  .details-section h1 {
+    font-size: 30px;
+  }
+
+  .details-section p {
+    font-size: 16px;
+  }
+}
+</style>
+</head>
+<body>
+<div id="header"></div>
+  <section class="blogs-section">
+    <h1>Our Blogs</h1>
+
+    <div class="blog-container">
+
+      <a href="blog-details.html?id=1" class="blog-card">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Healthy Food">
+        <h2>Healthy Food for Daily Life</h2>
+      </a>
+
+      <a href="blog-details.html?id=2" class="blog-card">
+        <img src="https://images.unsplash.com/photo-1543353071-873f17a7a088" alt="Tiffin Service">
+        <h2>Why Tiffin Service is Best for Students</h2>
+      </a>
+
+      <a href="blog-details.html?id=3" class="blog-card">
+        <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352" alt="Homemade Food">
+        <h2>Benefits of Homemade Food</h2>
+      </a>
+
+    </div>
+  </section>
+<div id="footer"></div>
+<script>
+    // Load Header
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+
+        // Attach menu button after header loads
+        const menuBtn = document.querySelector(".menu-btn");
+        const navLinks = document.querySelector(".nav-links");
+
+        if (menuBtn) {
+          menuBtn.onclick = () => {
+            navLinks.classList.toggle("show");
+          };
+        }
+      });
+
+    // Load Footer
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+</body>
+</html>

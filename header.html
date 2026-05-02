@@ -1,0 +1,408 @@
+<header><!-- TOP BAR -->
+<div class="top-bar">
+    <div>
+        <span>📞 +91-9810897878 </span>
+        <span>📧 officeofjpshastri@gmail.com</span>
+    </div>
+    <!-- <div>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-x-twitter"></i>
+    </div> -->
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">
+  Wedme<span>Pandit</span><small>.com</small>
+</div>
+
+
+    <div class="menu-btn">&#9776;</div>
+
+    <div class="nav-links">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="../../index.html#about">About</a></li>
+<li><a href="../../index.html#service">Services</a></li>
+<li><a href="gallary.html">Gallery</a></li>
+<li><a href="blogs.html">Blogs</a></li>
+    <a href="https://wa.me/919810897878" target="_blank" class="whatsapp-btn">
+  <i class="fab fa-whatsapp"></i> WhatsApp
+</a>
+
+  </ul>
+</div>
+
+
+</nav></header>
+
+<style>
+    /* ---------- TOP BAR --------- */
+.top-bar{
+    background: var(--dark);
+    color:var(--white);
+    padding:8px 20px;
+    font-size:14px; 
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.top-bar span{
+    text-align:center;
+}
+
+.top-bar i{
+    margin-left:5px;
+    cursor:pointer;
+}
+
+.top-bar i:hover{
+    color:var(--gold);
+}
+
+/* Mobile */
+@media (max-width:600px){
+    .top-bar{
+        font-size:12px;
+        padding:6px 8px;
+        gap:6px;
+    }
+
+    .top-bar i{
+        margin-left:3px;
+    }
+
+    .top-bar span{
+        font-size:12px;
+    }
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 50px;
+    background:var(--primary);
+    box-shadow:0 5px 18px var(--shadow-light);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:900;
+    color:var(--secondary);
+    letter-spacing:1px;
+    text-transform:uppercase;
+    white-space:nowrap;
+    display:flex;
+     /* aligns items to bottom */
+}
+
+.logo span{
+    color:var(--secondary);
+}
+
+/* .com styling */
+.logo small{
+    font-size:15px;
+    font-weight:600;
+    margin-left:0px;
+    color:var(--secondary);
+    opacity:0.7;
+    position:relative;
+    top: 15px; /* moves .com DOWN */
+}
+
+
+
+
+/* NAV LINKS */
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:2px;
+    z-index:2000;
+}
+
+.nav-links a{
+    color:var(--white);
+    text-decoration:none;
+    font-size:16px;
+    font-weight:600;
+    padding:8px 14px;
+    border-radius:10px;
+    transition:all .35s ease;
+}
+
+.nav-links a:hover{
+    background:var(--secondary);
+    color:var(--white);
+   box-shadow:0 6px 15px rgba(0,0,0,0.25);
+    transform:translateY(-2px);
+}
+
+/* MENU BUTTON */
+.menu-btn{
+    display:none;
+    font-size:30px;
+    cursor:pointer;
+    color:var(--secondary);
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp-btn{
+    background:#25D366;
+    color:#fff !important;
+    font-weight:600;
+    padding:8px 16px;
+    border-radius:25px;
+    margin-left:8px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    transition:0.3s ease;
+}
+
+/* ICON */
+.whatsapp-btn i{
+    font-size:16px;
+}
+
+/* HOVER */
+.whatsapp-btn:hover{
+    background:#1ebe5d;
+    transform:translateY(-2px);
+    box-shadow:0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* MOBILE NAV */
+@media(max-width:900px){
+
+    .navbar{
+        padding:12px 22px;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:100%;
+        right:-100%;
+        width:100%;
+        max-width:350px;
+        background:var(--light);
+        flex-direction:column;
+        padding:12px 0; /* tightened */
+        box-shadow:0 10px 30px var(--shadow-medium);
+        transition:.45s;
+        border-radius:0 0 16px 16px;
+        overflow:hidden; /* 🔥 FIX: prevents hover spill */
+    }
+
+    .nav-links a{
+        width:100%;
+        padding:14px 22px;
+        border-bottom:1px solid rgba(0,0,0,.07);
+        color:var(--dark);
+        display:block; /* 🔥 FIX */
+    }
+
+    .nav-links a:hover{
+        background:var(--secondary);
+        color:var(--dark);
+        box-shadow:none;
+        transform:none; /* 🔥 FIX: removes overlap cause */
+    }
+
+    .nav-links a.active{
+        background:var(--secondary);
+        color:var(--dark);
+        font-weight:700;
+    }
+
+    .nav-links.show{
+        right:0;
+    }
+    .whatsapp-btn{
+    margin:10px 20px;
+    justify-content:center;
+}
+}
+
+/* MENU */
+.menu{
+    display:flex;
+    gap:8px;
+}
+
+.menu li{
+    position:relative;
+}
+
+/* MAIN LINKS */
+.menu li a{
+    color:var(--white);
+    padding:12px 16px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:16px;
+    border-radius:8px; /* slightly reduced */
+    transition:all .25s ease;
+}
+
+/* HOVER EFFECT */
+.menu li a:hover{
+    background:var(--secondary);
+    color:var(--dark);
+    transform:translateY(-1px); /* reduced movement */
+}
+
+/* SUBMENU */
+.submenu{
+    position:absolute;
+    top:110%;
+    left:0;
+    background:var(--light);
+    min-width:240px;
+    display:none;
+    border-radius:12px;
+    box-shadow:0 12px 35px rgba(0,0,0,0.12);
+    padding:6px 0; /* tighter spacing */
+    z-index:999;
+    opacity:0;
+    transform:translateY(10px);
+    transition:all .3s ease;
+}
+
+/* SHOW DROPDOWN */
+.dropdown:hover > .submenu{
+    display:block;
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* SUBMENU LINKS */
+.submenu li a{
+    background:transparent;
+    color:var(--dark);
+    padding:10px 18px; /* 🔥 FIX: reduced height */
+    font-size:15px;
+    display:block; /* 🔥 FIX */
+}
+
+/* SUBMENU HOVER */
+.submenu li a:hover{
+    background:var(--secondary);
+    color:var(--dark);
+}
+
+/* SUB-SUBMENU */
+.sub-submenu{
+    top:0;
+    left:100%;
+}
+
+/* ---------- ARROWS ---------- */
+
+.dropdown > a::after{
+    content: "›";
+    font-size:18px;
+    font-weight:bold;
+    margin-left:4px;
+    transition:transform .3s ease;
+}
+
+.dropdown:hover > a::after{
+    transform:rotate(90deg);
+}
+
+.submenu .dropdown > a{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.submenu .dropdown > a::after{
+    content:"›";
+    font-size:18px;
+    font-weight:bold;
+    transition:transform .3s ease;
+}
+
+.submenu .dropdown:hover > a::after{
+    transform:translateX(4px);
+}
+
+/* REMOVE BULLETS */
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu,
+.submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* MOBILE FIX */
+@media(max-width:900px){
+
+    .menu{
+        flex-direction:column;
+        width:100%;
+        gap:0; /* 🔥 FIX: removes stacking gap issues */
+    }
+
+    .submenu{
+        position:relative;
+        box-shadow:none;
+        display:none;
+        border-radius:0;
+    }
+
+    .submenu.show{
+        display:block;
+    }
+
+    .sub-submenu{
+        left:0;
+    }
+}
+
+</style>
+
+<script>
+document.querySelectorAll('.dropdown > a').forEach(item => {
+  item.addEventListener('click', function(e){
+
+    if(window.innerWidth < 900){
+        e.preventDefault();
+
+        let submenu = this.nextElementSibling;
+
+        // close others
+        document.querySelectorAll('.submenu').forEach(el => {
+            if(el !== submenu) el.classList.remove('show');
+        });
+
+        submenu.classList.toggle('show');
+    }
+
+  });
+});
+</script>
