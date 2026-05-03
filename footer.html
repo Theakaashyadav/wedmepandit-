@@ -3,8 +3,11 @@
 
     <!-- BRAND -->
     <div class="footer-box brand-box">
-      <div class="logo">WEDME<span>PANDIT</span>.COM</div>
-      <p class="tagline">30+ Years of Trusted Vedic Services</p>
+      <div class="footer-logo">
+  <a href="../../index.html">
+    <img src="../../images/logo1.webp" alt="Wedme Pandit Logo">
+  </a>
+</div>
 
       <p>
         Performing authentic rituals with devotion, tradition, and spiritual accuracy across India.
@@ -69,6 +72,35 @@
   align-items:start; /* 🔥 FIX: align all columns from top */
 }
 
+/* ===== FOOTER LOGO ===== */
+.footer-logo {
+  display: flex;
+  justify-content: center;   /* center in footer */
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Logo Image */
+.footer-logo img {
+  height: 55px;              /* slightly smaller than header */
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+
+  border-radius: 10px;
+  background: #fff;
+  padding: 4px;
+
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
+}
+
+/* Hover Effect */
+.footer-logo img:hover {
+  transform: scale(1.05);
+  border-radius: 14px;
+  filter: drop-shadow(0 5px 12px rgba(0,0,0,0.25));
+}
 /* BALANCE HEIGHT */
 .footer-box{
   min-height:190px; /* 🔥 FIX: prevents address from looking isolated */
