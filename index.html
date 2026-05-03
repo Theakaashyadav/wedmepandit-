@@ -55,43 +55,46 @@
 
 
   <div class="hero-section">
+  <div class="hero-slider">
 
+    <button class="slider-btn prev" type="button">&#10094;</button>
+    <button class="slider-btn next" type="button">&#10095;</button>
 
-    <!-- RIGHT IMAGE SLIDER -->
-    <div class="hero-slider">
+    <div class="slides">
 
-      <div class="slides">
-        <div class="hero-slide">
-  <img src="images/6.webp" alt="India">
-  <div class="caption">Beautiful India</div>
-</div>
+      <div class="hero-slide">
+        <img src="images/6.webp" alt="India">
+        <div class="caption">On the occasion of the wedding anniversary of India’s 14th President Ram Nath Kovind, Acharya Jai Prakash Shastri bestowed his blessings at a program organised at his residence.</div>
+      </div>
 
-<div class="hero-slide">
-  <img src="images/7.webp" alt="Dubai">
-  <div class="caption">Luxury Dubai</div>
-</div>
+      <div class="hero-slide">
+        <img src="images/7.webp" alt="Dubai">
+        <div class="caption">India’s 14th President Ram Nath Kovind felicitating Acharya Jai Prakash Shastri.</div>
+      </div>
 
-<div class="hero-slide">
-  <img src="images/8.webp" alt="Maldives">
-  <div class="caption">Maldives Paradise</div>
-</div>
+      <div class="hero-slide">
+        <img src="images/8.webp" alt="Maldives">
+        <div class="caption">On the occasion of the birthday of Rajya Sabha MP Harnath Singh Yadav, a sacred yajna was performed at his official residence in Delhi by Acharya Jai Prakash Shastri.</div>
+      </div>
 
-<div class="hero-slide">
-  <img src="images/9.webp" alt="India">
-  <div class="caption">Incredible India</div>
-</div>
+      <div class="hero-slide">
+        <img src="images/9.webp" alt="India">
+        <div class="caption">Performing a sacred yajna under the spiritual guidance of Acharya Jai Prakash Shastri, India’s 14th President Ram Nath Kovind and Swami Chidanand Saraswati of Parmarth Niketan Ashram, Rishikesh.</div>
+      </div>
 
-<div class="hero-slide">
-  <img src="images/4.webp" alt="Maldives">
-  <div class="caption">Island Escape</div>
-</div>
+      <div class="hero-slide">
+        <img src="images/4.webp" alt="Maldives">
+        <div class="caption">On the occasion of the wedding anniversary of India’s 14th President Ram Nath Kovind, Acharya Jai Prakash Shastri conducted a sacred yajna at his official residence in Delhi.</div>
+      </div>
 
+      <div class="hero-slide">
+        <img src="images/gallery/8.jpeg" alt="Maldives">
+        <div class="caption">On the occasion of the inauguration of the new petrol pump of Rajya Sabha MP Harnath Singh Yadav, Acharya Jai Prakash Shastri performed a sacred yajna.</div>
       </div>
 
     </div>
-
-
   </div>
+</div>
 
   <!-- INTRO TEXT SECTION OUTSIDE -->
 <section class="intro-content-section">
@@ -306,13 +309,13 @@
 
         <!-- Pujas Performed -->
         <div class="achievement-box">
-          <h3 class="counter" data-target="10000">0</h3>
+          <h3 class="counter" data-target="10115">0</h3>
           <p>Pujas Performed</p>
         </div>
 
         <!-- Families Served -->
         <div class="achievement-box">
-          <h3 class="counter" data-target="500">0</h3>
+          <h3 class="counter" data-target="518">0</h3>
           <p>Families Served</p>
         </div>
 
@@ -444,21 +447,69 @@
   <div id="footer"></div>
 
   <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll(".hero-slide");
-    const slidesContainer = document.querySelector(".slides");
-    const totalSlides = slides.length;
 
-    function changeSlide() {
-      currentSlide++;
-      if (currentSlide >= totalSlides) {
+    
+   const slidesContainer = document.querySelector('.slides');
+const slides = document.querySelectorAll('.hero-slide');
+
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+
+let currentSlide = 0;
+const totalSlides = slides.length;
+let autoSlide;
+
+/* 🔥 Show Slide */
+function showSlide(index){
+    if(index < 0){
+        currentSlide = totalSlides - 1;
+    } else if(index >= totalSlides){
         currentSlide = 0;
-      }
-
-      slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+    } else {
+        currentSlide = index;
     }
 
-    setInterval(changeSlide, 5000); // 5 seconds
+    slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+/* 🔥 Next / Prev */
+function nextSlide(){
+    showSlide(currentSlide + 1);
+}
+
+function prevSlide(){
+    showSlide(currentSlide - 1);
+}
+
+/* 🔥 Auto Slide */
+function startAutoSlide(){
+    autoSlide = setInterval(() => {
+        nextSlide();
+    }, 7000);
+}
+
+/* 🔥 Stop Auto (on interaction) */
+function stopAutoSlide(){
+    clearInterval(autoSlide);
+}
+
+/* Button Events */
+nextBtn.addEventListener('click', () => {
+    stopAutoSlide();
+    nextSlide();
+    startAutoSlide();
+});
+
+prevBtn.addEventListener('click', () => {
+    stopAutoSlide();
+    prevSlide();
+    startAutoSlide();
+});
+
+/* Start Auto Initially */
+startAutoSlide();
+
+    
     // Load Header
     fetch("header.html")
       .then(res => res.text())
