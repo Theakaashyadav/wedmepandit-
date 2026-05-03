@@ -99,26 +99,85 @@ body {
     grid-column: span 1;
   }
 }
+/* LIGHTBOX */
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  animation: zoomIn 0.3s ease;
+}
+
+#lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 35px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* animation */
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
   </style>
 </head>
 <body>
 <div id="header"></div>
   <section class="gallery-section">
-    <h1>Our Food Gallery</h1>
+    <h1>Gallery</h1>
 
     <div class="gallery">
 
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836"></div>
-      <div class="gallery-item tall"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352"></div>
-      <div class="gallery-item wide"><img src="https://images.unsplash.com/photo-1551218808-94e220e084d2"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092"></div>
-      <div class="gallery-item tall"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1605478371310-a9f1e96b4ff4"></div>
-      <div class="gallery-item wide"><img src="https://images.unsplash.com/photo-1529042410759-befb1204b468"></div>
-
+      <div class="gallery-item"><img src="images/gallery/1.jpeg"></div>
+<div class="gallery-item tall"><img src="images/gallery/2.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/3.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/4.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/5.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/6.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/7.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/8.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/9.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/10.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/11.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/12.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/13.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/14.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/15.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/16.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/17.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/18.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/19.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/20.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/21.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/22.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/23.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/24.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/25.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/26.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/27.jpeg"></div>
+<div class="gallery-item"><img src="images/gallery/28.jpeg"></div>
     </div>
   </section>
+  <div id="lightbox">
+  <span class="close">&times;</span>
+  <img id="lightbox-img">
+</div>
 <div id="footer"></div>
 <script>
     // Load Header
@@ -142,6 +201,31 @@ body {
     fetch("footer.html")
       .then(res => res.text())
       .then(data => document.getElementById("footer").innerHTML = data);
+
+      const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".close");
+
+// Open image
+document.querySelectorAll(".gallery-item img").forEach(img => {
+  img.addEventListener("click", () => {
+    lightbox.style.display = "flex";
+    lightboxImg.src = img.src;
+  });
+});
+
+// Close button
+closeBtn.onclick = () => {
+  lightbox.style.display = "none";
+};
+
+// Close on background click
+lightbox.onclick = (e) => {
+  if (e.target !== lightboxImg) {
+    lightbox.style.display = "none";
+  }
+};
 </script>
+
 </body>
 </html>
