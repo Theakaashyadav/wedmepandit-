@@ -1,14 +1,19 @@
 <header><!-- TOP BAR -->
 <div class="top-bar">
     <div>
-        <span>📞 +91-9810897878 </span>
+        <span>📞 +91-9810897878</span>
         <span>📧 wedmepandit@gmail.com</span>
     </div>
-    <!-- <div>
-        <i class="fab fa-facebook"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-x-twitter"></i>
-    </div> -->
+
+    <div class="social-links">
+        <a class="instagram" href="https://www.instagram.com/wedmepandit" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a class="youtube" href="https://youtube.com/@wedmepandit" target="_blank">
+            <i class="fab fa-youtube"></i>
+        </a>
+    </div>
 </div>
 
 <!-- NAVBAR -->
@@ -25,9 +30,9 @@
 
     <div class="nav-links">
   <li><a href="../../index.html">Home</a></li>
-  <li><a href="../../index.html#about">About</a></li>
+  <li><a href="../../about.html">About</a></li>
 <li><a href="../../index.html#service">Services</a></li>
-<li><a href="/gallery">Gallery</a></li>
+<li><a href="../../gallary.html">Gallery</a></li>
 <li><a href="../../blogs.html">Blogs</a></li>
 <li><a href="../../contact.html">Contact</a></li>
     <a href="https://wa.me/919810897878" target="_blank" class="whatsapp-btn">
@@ -39,7 +44,8 @@
 
 
 </nav></header>
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
     /* ---------- TOP BAR --------- */
 .top-bar{
@@ -83,7 +89,55 @@
         font-size:12px;
     }
 }
+/* SOCIAL ICONS FIX */
+.top-bar .social-links{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-top:0;
+}
 
+.top-bar .social-links a{
+    width:34px;
+    height:34px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    border-radius:50%;
+    color:#fff;
+    font-size:17px;
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.18);
+    transition:0.3s ease;
+}
+
+.top-bar .social-links a i{
+    margin:0;
+    color:inherit;
+}
+
+.top-bar .social-links a:hover{
+    transform:translateY(-3px);
+    color:#fff;
+}
+
+.top-bar .social-links a.instagram:hover{
+    background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+}
+
+.top-bar .social-links a.youtube:hover{
+    background:#ff0000;
+}
+
+@media(max-width:600px){
+    .top-bar .social-links a{
+        width:28px;
+        height:28px;
+        font-size:14px;
+    }
+}
 /* ---------- NAVBAR ---------- */
 .navbar{
     width:100%;
