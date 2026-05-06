@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | WedMePandit</title>
+
+  <style>
+    :root {
+      --primary: #7b1e3a;
+      --secondary: #d4a017;
+      --accent: #fff3d6;
+      --light: #fffaf2;
+      --dark: #2b2b2b;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+    }
+
+    .about-section {
+      padding: 70px 20px;
+      overflow: hidden;
+    }
+
+    .about-container {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    /* ABOUT CARD */
+.jp-about-card{
+    max-width:1200px;
+    margin:40px auto;
+    border-radius:20px;
+    overflow:hidden;
+    background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(10px);
+    box-shadow:0 15px 40px var(--shadow-light);
+    border:1px solid rgba(0,0,0,0.05);
+    transition:0.3s;
+}
+
+/* Hover */
+.jp-about-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 25px 60px var(--shadow-medium);
+}
+
+/* INNER SECTION */
+.jp-about-card .jp-about-section{
+    padding:50px 25px !important;
+    background:transparent !important;
+}
+    /* ABOUT SECTION */
+.jp-about-section {
+  background: var(--light);
+  padding: 70px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle glow */
+.jp-about-section::before {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  background: var(--secondary);
+  opacity: 0.12;
+  border-radius: 50%;
+  top: -60px;
+  left: -60px;
+  filter: blur(70px);
+}
+
+/* CONTAINER */
+.jp-about-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+/* IMAGE */
+.jp-about-image {
+  flex: 1;
+}
+
+.jp-image-box {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.jp-image-box img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.jp-image-box:hover img {
+  transform: scale(1.04);
+}
+
+/* BADGE */
+.jp-image-badge {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  background: var(--primary);
+  color: var(--white);
+  padding: 6px 14px;
+  font-size: 12px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* CONTENT */
+.jp-about-content {
+  flex: 1;
+}
+
+.jp-about-content h2 {
+  font-size: 34px;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+/* TAGLINE */
+.jp-tagline {
+  color: var(--secondary);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* TEXT */
+.jp-about-content p {
+  color: var(--dark);
+  line-height: 1.7;
+  margin-bottom: 12px;
+  opacity: 0.85;
+}
+
+/* SERVICES */
+.jp-about-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.jp-about-services span {
+  background: var(--accent);
+  color: var(--primary);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* BUTTON */
+.jp-about-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 11px 24px;
+  background: var(--primary);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.25s ease;
+  box-shadow: 0 6px 18px rgba(123,30,58,0.25);
+}
+
+.jp-about-btn:hover {
+  transform: translateY(-2px);
+  background: #5e162c;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .jp-about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .jp-about-content h2 {
+    font-size: 26px;
+  }
+
+  .jp-about-services {
+    justify-content: center;
+  }
+
+  .jp-image-badge {
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+}
+.image-badge {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  background: var(--primary);
+  color: var(--white);
+  padding: 8px 18px;
+  font-size: 13px;
+  border-radius: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+    .about-intro {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .about-intro h1 {
+      font-size: 38px;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      color: var(--secondary);
+      font-weight: 700;
+      margin-bottom: 18px;
+      font-size: 17px;
+    }
+
+    .about-intro p,
+    .section-box p {
+      line-height: 1.8;
+      font-size: 15.5px;
+      opacity: 0.9;
+      margin-bottom: 14px;
+    }
+
+    .about-btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 26px;
+      background: var(--primary);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: 0.25s ease;
+      box-shadow: 0 6px 18px rgba(123,30,58,0.25);
+      font-weight: 600;
+    }
+
+    .about-btn:hover {
+      transform: translateY(-2px);
+      background: #5e162c;
+    }
+
+    .section-title {
+      text-align: center;
+      color: var(--primary);
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-bottom: 55px;
+    }
+
+    .section-box {
+      background: var(--white);
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      border-top: 4px solid var(--secondary);
+    }
+
+    .section-box h3 {
+      color: var(--primary);
+      font-size: 23px;
+      margin-bottom: 12px;
+    }
+
+    .focus-list {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .focus-list li {
+      background: var(--accent);
+      margin-bottom: 10px;
+      padding: 12px 15px;
+      border-radius: 10px;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 45px;
+    }
+
+    .services span {
+      background: var(--accent);
+      color: var(--primary);
+      padding: 10px 16px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .final-note {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      background: var(--primary);
+      color: var(--white);
+      padding: 30px;
+      border-radius: 18px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      .about-section {
+        padding: 45px 16px;
+      }
+
+      .about-hero {
+        text-align: center;
+      }
+
+      .about-intro h1 {
+        font-size: 30px;
+      }
+
+      .about-images {
+        grid-template-columns: 1fr;
+      }
+
+      .about-images img,
+      .about-images img:first-child {
+        grid-column: span 1;
+        height: auto;
+      }
+
+      .section-title {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<section class="about-section" id="about">
+  <div class="about-container">
+
+    <div class="jp-about-card" id="about">
+  <section class="jp-about-section">
+    <div class="jp-about-container">
+
+      <!-- Image -->
+      <div class="jp-about-image">
+        <div class="jp-image-box">
+          <img src="images/Jp.webp" alt="Pandit Ji">
+          <div class="jp-image-badge">30+ Years Experience</div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="jp-about-content">
+        <h2>Jai Prakash Shastri Ji</h2>
+
+        <p class="jp-tagline">
+          Trusted Vedic Pandit for All Religious Ceremonies
+        </p>
+
+        <p>
+          Pandit Jai Prakash Shastri (The Family priest of the 14th President of India,
+          Shri Ram Nath Kovind Ji) is a trusted Vedic priest with over 30+ years of experience.
+          He conducts Marriage Rituals, Naming Ceremonies, Yagya, Birthdays, House Warmings,
+          Discourses and all Vedic Rites with sincerity and traditional expertise.
+        </p>
+
+        <!-- Services -->
+        <div class="jp-about-services">
+          <span>Vivah (Wedding)</span>
+          <span>Griha Pravesh</span>
+          <span>Havan & Pooja</span>
+          <span>Namkaran</span>
+          <span>Janmdivas</span>
+          <span>Pravachan</span>
+          <span>Yagya</span>
+        </div>
+
+        <a href="tel:+919810897878" class="jp-about-btn">
+          📞 Call Pandit Ji
+        </a>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+    <!-- MISSION AND VISION -->
+    <h2 class="section-title">Our Mission & Vision</h2>
+
+    <div class="info-grid">
+      <div class="section-box">
+        <h3>Our Mission</h3>
+        <p>
+          Our mission is to make it easy for families to find knowledgeable pandits who can
+          perform ceremonies with authenticity, clarity, and proper Vedic rituals.
+        </p>
+        <p>
+          We aim to make religious services simple, reliable, transparent, and accessible for
+          every family.
+        </p>
+      </div>
+
+      <div class="section-box">
+        <h3>Our Vision</h3>
+        <p>
+          Our vision is to become a trusted digital bridge between tradition and convenience,
+          bringing sacred rituals closer to modern families with ease and authenticity.
+        </p>
+        <p>
+          We want every ritual to be performed with proper knowledge, devotion, and spiritual meaning.
+        </p>
+      </div>
+    </div>
+
+    <!-- WHY CHOOSE US -->
+    <h2 class="section-title">Why Choose WedMePandit?</h2>
+
+    <div class="info-grid">
+      <div class="section-box">
+        <h3>What We Focus On</h3>
+        <ul class="focus-list">
+          <li>Providing access to qualified and experienced pandits</li>
+          <li>Ensuring transparent communication and easy booking</li>
+          <li>Offering services based on regional traditions and customs</li>
+          <li>Making the complete process simple and stress-free</li>
+        </ul>
+      </div>
+
+      <div class="section-box">
+        <h3>Our Promise</h3>
+        <p>
+          We carefully connect users with pandits who not only have expertise in Vedic practices
+          but also understand the importance of explaining rituals in a simple and meaningful way.
+        </p>
+        <p>
+          With WedMePandit, you don’t just book a pandit—you ensure that your special moments
+          are guided by tradition, purity, and devotion.
+        </p>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="services">
+      <span>Verified Pandits</span>
+      <span>Easy Booking</span>
+      <span>Vivah Sanskar</span>
+      <span>Engagement Puja</span>
+      <span>Griha Pravesh</span>
+      <span>Namkaran Sanskar</span>
+      <span>Satyanarayan Katha</span>
+      <span>Regional Traditions</span>
+      <span>Stress-Free Service</span>
+    </div>
+
+    <!-- FINAL NOTE -->
+    <div class="final-note">
+      With WedMePandit, your sacred ceremonies become easier, more organized, and more meaningful.
+      We help you celebrate every important moment with proper rituals, trusted pandits, and complete devotion.
+    </div>
+
+  </div>
+</section>
+
+<div id="footer"></div>
+
+<script>
+  // Load Header
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+
+      const menuBtn = document.querySelector(".menu-btn");
+      const navLinks = document.querySelector(".nav-links");
+
+      if (menuBtn && navLinks) {
+        menuBtn.onclick = () => {
+          navLinks.classList.toggle("show");
+        };
+      }
+    });
+
+  // Load Footer
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+</body>
+</html>
