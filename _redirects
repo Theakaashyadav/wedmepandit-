@@ -1,5 +1,21 @@
-/gallery   /gallery.html
-/about     /about.html
-/contact   /contact.html
+# HOME
+/                  /index.html                    200
+/home              /index.html                    200
 
-/*.html    /:splat   301
+# ABOUT
+/about-us          /about.html                    200
+
+# SERVICES
+/Our-services      /index.html#service            200
+
+# GALLERY
+/gallery           /gallary.html                  200
+
+# BLOGS
+/blogs             /blogs.html                    200
+
+# CONTACT
+/contact           /contact.html                  200
+
+# BLOG DETAILS
+/blogs/environmental-protection-through-yagya    /blog-details.html?id=1    200
