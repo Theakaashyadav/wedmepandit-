@@ -161,12 +161,11 @@ const blogs = {
 
 const params = new URLSearchParams(window.location.search);
 
-let blogSlug = params.get("blog");
+let blogSlug = "";
 
-if (!blogSlug) {
-  const pathParts = window.location.pathname.split("/").filter(Boolean);
-  blogSlug = pathParts[pathParts.length - 1];
-}
+const pathParts = window.location.pathname.split("/").filter(Boolean);
+
+blogSlug = pathParts[pathParts.length - 1];
 
 const blog = blogs[blogSlug];
 
