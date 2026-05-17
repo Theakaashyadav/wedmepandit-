@@ -567,18 +567,17 @@ startAutoSlide();
     });
 
 
-    document.addEventListener("DOMContentLoaded", function () {
-  if (window.location.pathname === "/Our-services") {
-    const serviceSection = document.getElementById("service");
-
-    if (serviceSection) {
-      setTimeout(() => {
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.location.pathname === "/our-services") {
+    setTimeout(() => {
+      const serviceSection = document.getElementById("service");
+      if (serviceSection) {
         serviceSection.scrollIntoView({
           behavior: "smooth",
           block: "start"
         });
-      }, 300);
-    }
+      }
+    }, 500);
   }
 });
 
