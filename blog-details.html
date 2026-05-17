@@ -140,7 +140,7 @@ body {
 <div id="footer"></div>
 <script>
 const blogs = {
-  1: {
+  "environmental-protection-through-yagya": {
     title: "यज्ञ से पर्यावरण संरक्षण",
     image: "/images/blog1.webp",
     content: `प्राचीन भारतीय संस्कृति में यज्ञ केवल धार्मिक अनुष्ठान नहीं, बल्कि प्रकृति के संरक्षण और संतुलन का एक महत्वपूर्ण माध्यम माना गया है। हमारे वेदों में यज्ञ को जीवन का आधार बताया गया है। यह न केवल आध्यात्मिक उन्नति का साधन है, बल्कि पर्यावरण को शुद्ध और संतुलित रखने में भी सहायक है।
@@ -159,17 +159,16 @@ const blogs = {
   }
 };
 
-const slugToId = {
-  "/open-blog": "1",
-  "/open-blog/": "1",
-  "/open-blog": "1",
-  "/open-blog/": "1"
-};
-
 const params = new URLSearchParams(window.location.search);
-let blogId = params.get("id") || slugToId[window.location.pathname];
 
-const blog = blogs[blogId];
+let blogSlug = params.get("blog");
+
+if (!blogSlug) {
+  const pathParts = window.location.pathname.split("/").filter(Boolean);
+  blogSlug = pathParts[pathParts.length - 1];
+}
+
+const blog = blogs[blogSlug];
 
 if (blog) {
   document.getElementById("blogImage").src = blog.image;
