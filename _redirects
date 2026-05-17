@@ -18,5 +18,5 @@
 /contact           /contact.html                  200
 
 # BLOG DETAILS
-/blogs/environmental-protection-through-yagya    /blog-details.html?id=1    200
-/environmental-protection-through-yagya          /blog-details.html?id=1    200
+/open-blog    /blog-details.html?id=1    200
+/open-blog          /blog-details.html?id=1    200
