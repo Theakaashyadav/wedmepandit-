@@ -566,6 +566,22 @@ startAutoSlide();
       });
     });
 
+
+    document.addEventListener("DOMContentLoaded", function () {
+  if (window.location.pathname === "/Our-services") {
+    const serviceSection = document.getElementById("service");
+
+    if (serviceSection) {
+      setTimeout(() => {
+        serviceSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }, 300);
+    }
+  }
+});
+
   </script>
 
 </body>
