@@ -18,5 +18,4 @@
 /contact           /contact.html                  200
 
 # BLOG DETAILS
-/open-blog    /blog-details.html?id=1    200
-/open-blog          /blog-details.html?id=1    200
+/blogs/open-blog/*    /blog-details.html          200
