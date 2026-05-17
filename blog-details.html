@@ -200,6 +200,18 @@ if (blog) {
     fetch("footer.html")
       .then(res => res.text())
       .then(data => document.getElementById("footer").innerHTML = data);
+
+    const slugToId = {
+  "/blogs/environmental-protection-through-yagya": "1",
+  "/environmental-protection-through-yagya": "1"
+};
+
+const urlParams = new URLSearchParams(window.location.search);
+let blogId = urlParams.get("id");
+
+if (!blogId && slugToId[window.location.pathname]) {
+  blogId = slugToId[window.location.pathname];
+}
   </script>
 </body>
 </html>
