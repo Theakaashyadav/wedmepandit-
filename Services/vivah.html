@@ -10,86 +10,116 @@
   <link rel="stylesheet" href="../style.css">
 
 <style>
-
-/* ===== ROOT VARIABLES (UPDATED PALETTE) ===== */
 :root {
-  --primary: #7b1e3a;   /* Deep maroon */
-  --secondary: #f2c94c; /* Soft gold */
-  --accent: #fdf2e3;    /* Cream */
+  --primary: #7b1e3a;
+  --secondary: #f2c94c;
+  --accent: #fdf2e3;
   --dark: #2b1b1b;
   --light: #fffaf3;
-
   --white: #ffffff;
   --gold: #f2c94c;
   --text-dark: #2b1b1b;
-
   --shadow-light: rgba(0,0,0,0.08);
   --shadow-medium: rgba(0,0,0,0.15);
   --shadow-blue: rgba(123, 30, 58, 0.25);
 }
 
-/* ===== GLOBAL ===== */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: var(--accent);
-  overflow-x: hidden;
   color: var(--text-dark);
 }
 
 /* ===== ANIMATED BACKGROUND ===== */
-body::before, body::after {
+body::before,
+body::after {
   content: "";
   position: fixed;
-  width: 500px;
-  height: 500px;
+  width: 420px;
+  height: 420px;
   border-radius: 50%;
-  filter: blur(120px);
+  filter: blur(110px);
   z-index: -1;
   animation: float 8s infinite alternate ease-in-out;
+  pointer-events: none;
+}
+
+body::before {
+  top: -120px;
+  left: -120px;
+  background: rgba(242, 201, 76, 0.35);
+}
+
+body::after {
+  right: -120px;
+  bottom: -120px;
+  background: rgba(123, 30, 58, 0.18);
 }
 
 /* ===== HEADER ===== */
 .header {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
   text-align: center;
-  padding: 60px 20px 20px;
+  padding: 60px 18px 20px;
 }
 
 .header h1 {
-  font-size: 40px;
+  font-size: clamp(28px, 5vw, 40px);
+  line-height: 1.25;
   font-weight: 700;
-  color: var(--primary); /* solid instead of gradient */
+  color: var(--primary);
 }
 
 .header p {
   color: #666;
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 1.7;
+  margin-top: 10px;
 }
 
 /* ===== GRID ===== */
 .services-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-  padding: 30px;
+  width: 100%;
   max-width: 1200px;
   margin: auto;
+  padding: 30px 24px 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
 }
 
 /* ===== CARD ===== */
 .service-card {
   position: relative;
-  background: rgba(255,250,243,0.85);
+  width: 100%;
+  min-height: 240px;
+  background: rgba(255,250,243,0.88);
   backdrop-filter: blur(15px);
   border-radius: 18px;
-  padding: 25px;
+  padding: 26px 22px;
   text-align: center;
-  transition: all 0.4s ease;
+  transition: 0.35s ease;
   box-shadow: 0 10px 25px var(--shadow-light);
   overflow: hidden;
   animation: fadeUp 0.8s ease forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* TOP BAR */
 .service-card::before {
   content: "";
   position: absolute;
@@ -97,10 +127,9 @@ body::before, body::after {
   left: 0;
   height: 5px;
   width: 100%;
-  background: var(--secondary); /* solid gold */
+  background: var(--secondary);
 }
 
-/* LIGHT EFFECT */
 .service-card::after {
   content: "";
   position: absolute;
@@ -112,7 +141,7 @@ body::before, body::after {
 }
 
 .service-card:hover {
-  transform: translateY(-12px) scale(1.03);
+  transform: translateY(-8px);
   box-shadow: 0 20px 45px var(--shadow-blue);
 }
 
@@ -122,46 +151,50 @@ body::before, body::after {
 
 /* ===== ICON ===== */
 .icon i {
-  font-size: 36px;
-  color: var(--primary); /* solid color */
+  font-size: clamp(30px, 4vw, 36px);
+  color: var(--primary);
   transition: 0.3s;
 }
 
 .service-card:hover .icon i {
-  transform: scale(1.2) rotate(5deg);
-  color: var(--secondary); /* gold on hover */
+  transform: scale(1.14) rotate(5deg);
+  color: var(--secondary);
 }
 
 /* ===== TEXT ===== */
 .service-card h3 {
-  margin: 12px 0;
+  margin: 14px 0 10px;
   color: var(--dark);
+  font-size: clamp(18px, 2.5vw, 21px);
+  line-height: 1.35;
 }
 
 .service-card p {
   font-size: 14px;
+  line-height: 1.7;
   color: #555;
+  margin: 0;
+  flex: 1;
 }
 
-/* ===== BUTTON STYLE ===== */
+/* ===== BUTTON ===== */
 .service-card button {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 10px 22px;
+  margin-top: 18px;
+  padding: 11px 22px;
   border-radius: 30px;
   border: none;
   color: var(--white);
   font-weight: 500;
   font-size: 14px;
-  background: var(--primary); /* solid maroon */
-  transition: all 0.3s ease;
+  background: var(--primary);
+  transition: 0.3s ease;
   cursor: pointer;
 }
 
 .service-card button:hover {
-  background: var(--secondary); /* gold hover */
+  background: var(--secondary);
   color: var(--dark);
-  transform: scale(1.08);
+  transform: scale(1.05);
   box-shadow: 0 8px 20px var(--shadow-blue);
 }
 
@@ -177,12 +210,65 @@ body::before, body::after {
   }
 }
 
-/* ===== FLOAT BG ===== */
 @keyframes float {
-  from { transform: translateY(0px); }
-  to { transform: translateY(40px); }
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(40px);
+  }
 }
 
+/* ===== TABLET ===== */
+@media (max-width: 768px) {
+  .header {
+    padding: 45px 16px 15px;
+  }
+
+  .services-container {
+    padding: 25px 16px 45px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+  }
+
+  .service-card {
+    min-height: auto;
+    padding: 24px 18px;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 480px) {
+  body::before,
+  body::after {
+    width: 260px;
+    height: 260px;
+    filter: blur(90px);
+  }
+
+  .header {
+    padding: 35px 14px 10px;
+  }
+
+  .services-container {
+    padding: 20px 12px 35px;
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    border-radius: 16px;
+    padding: 22px 16px;
+  }
+
+  .service-card button {
+    width: 100%;
+    padding: 12px 18px;
+  }
+}
 </style>
 </head>
 
