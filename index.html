@@ -28,6 +28,10 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="canonical" href="https://www.wedmepandit.com/">
+
+  <meta id="dynamic-description" name="description" content="Book experienced Pandit Ji online for Wedding, Griha Pravesh, Havan, Namkaran, Satyanarayan Katha and all Hindu rituals in Delhi NCR with WedMePandit.">
+
+<title id="dynamic-title">Book Trusted Pandit Ji Online in Delhi NCR | WedMePandit</title>
   
  
   <link rel="stylesheet" href="style.css">
@@ -602,6 +606,34 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 500);
   }
 });
+
+    if (window.location.pathname === "/Our-services") {
+
+  document.title = "Hindu Puja & Wedding Ritual Services near Delhi";
+
+  const metaDescription = document.querySelector('meta[name="description"]');
+
+  if (metaDescription) {
+    metaDescription.setAttribute(
+      "content",
+      "Explore Hindu religious services including Vivah Sanskar, Namkaran, Griha Pravesh, Shanti Pooja, Havan and Festival Pooja by expert Pandit Ji."
+    );
+  }
+
+  // Optional Canonical
+  let canonical = document.querySelector("link[rel='canonical']");
+
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.setAttribute("rel", "canonical");
+    document.head.appendChild(canonical);
+  }
+
+  canonical.setAttribute(
+    "href",
+    "https://www.wedmepandit.com/Our-services"
+  );
+}
 
   </script>
 
