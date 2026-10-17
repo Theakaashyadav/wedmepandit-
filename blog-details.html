@@ -5,6 +5,7 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, follow" />
 
   <title>Yaga and Environmental Protection | Scientific Importance of Ancient Indian Culture</title>
 
@@ -150,6 +151,7 @@ body {
   }
 }
 </style>
+  <link rel="stylesheet" href="/phase3.css">
 </head>
 <body>
 <div id="header"></div>
@@ -320,11 +322,14 @@ let blogSlug = "";
 
 const pathParts = window.location.pathname.split("/").filter(Boolean);
 
-blogSlug = pathParts[pathParts.length - 1];
+blogSlug = params.get("slug") || pathParts[pathParts.length - 1];
 
 const blog = blogs[blogSlug];
 
 if (blog) {
+  const canonicalUrl = `https://www.wedmepandit.com/blogs/open-blog/${blogSlug}`;
+  document.querySelector('link[rel="canonical"]')?.setAttribute('href', canonicalUrl);
+  document.querySelector('meta[property="og:url"]')?.setAttribute('content', canonicalUrl);
   document.getElementById("blogImage").src = blog.image;
   document.getElementById("blogTitle").textContent = blog.title;
   document.getElementById("blogContent").textContent = blog.content;
@@ -343,7 +348,8 @@ fetch("/header.html")
 
     if (menuBtn && navLinks) {
       menuBtn.onclick = () => {
-        navLinks.classList.toggle("show");
+        const isOpen = navLinks.classList.toggle("show");
+            menuBtn.setAttribute("aria-expanded", String(isOpen));
       };
     }
   });

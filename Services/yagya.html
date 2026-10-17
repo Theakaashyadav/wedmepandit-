@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Yagya | Wedmipandit</title>
+  <title>Vedic Yagya in Delhi NCR | WedMePandit</title>
+<meta name="description" content="Enquire about traditional Vedic Yagya with mantra chanting and ritual guidance from WedMePandit in Delhi NCR.">
+<link rel="canonical" href="https://www.wedmepandit.com/Services/yagya.html">
+<meta property="og:title" content="Vedic Yagya in Delhi NCR | WedMePandit">
+<meta property="og:description" content="Enquire about traditional Vedic Yagya with mantra chanting and ritual guidance from WedMePandit in Delhi NCR.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.wedmepandit.com/Services/yagya.html">
+<meta property="og:image" content="https://www.wedmepandit.com/images/logo1.webp">
+<meta name="twitter:card" content="summary_large_image">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../style.css">
 
   <style>
     body {
@@ -82,10 +91,14 @@
     }
 
   </style>
+  <link rel="stylesheet" href="/phase3.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Yagya Ceremony (Yajna / Havan)","url":"https://www.wedmepandit.com/Services/yagya.html","provider":{"@type":"Organization","name":"WedMePandit","url":"https://www.wedmepandit.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.wedmepandit.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.wedmepandit.com/services"},{"@type":"ListItem","position":3,"name":"Yagya Ceremony (Yajna / Havan)","item":"https://www.wedmepandit.com/Services/yagya.html"}]}</script>
 </head>
 
 <body>
 <div id="header"></div>
+<nav class="service-breadcrumb" aria-label="Breadcrumb"><a href="/index.html">Home</a><span aria-hidden="true">›</span><a href="/service.html">Services</a><span aria-hidden="true">›</span><span aria-current="page">Yagya Ceremony (Yajna / Havan)</span></nav>
 <div class="container">
 
   
@@ -94,7 +107,7 @@
 <!-- CARD -->
   <a href="../contact.html" class="tv-link">
         <div class="tv-card">
-        <img src="images/s7.webp">
+<img src="../images/s7.webp" alt="Vedic Yagya ceremony" width="1536" height="1024" decoding="async" loading="eager" fetchpriority="high">
         <div class="tv-info">
           <h3>Yagya</h3>
           <p>Invoke Peace, Prosperity, and Positivity through Yagya</p>
@@ -103,7 +116,7 @@
       </a>
 
   <div id="yagya-details" class="details">
-  <h2>Yagya Ceremony (Yajna / Havan)</h2>
+<h1>Yagya Ceremony (Yajna / Havan)</h1>
 
   <p>
     Yagya is one of the most powerful Vedic rituals performed to purify the
@@ -150,10 +163,11 @@
 
 
 </div>
+<section class="site-related" aria-labelledby="related-links-heading"><div class="premium-container"><p class="eyebrow">Continue exploring</p><h2 id="related-links-heading">Related Services and Guides</h2><div class="site-related__links"><a href="/service.html">Explore All Puja Services</a><a href="/Services/havanpooja.html">Havan and Yagya Services</a><a href="/Services/namkaran.html">Namkaran Sanskar</a><a href="/blogs.html">Helpful Puja Guides</a><a href="/contact.html">Contact WedMePandit</a></div></div></section>
 <div id="footer"></div>
 
 <script>
-     fetch("header.html")
+     fetch("../header.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("header").innerHTML = data;
@@ -164,13 +178,14 @@
 
       if(menuBtn){
         menuBtn.onclick = () => {
-          navLinks.classList.toggle("show");
+          const isOpen = navLinks.classList.toggle("show");
+            menuBtn.setAttribute("aria-expanded", String(isOpen));
         };
       }
     });
 
   // Load Footer
-  fetch("footer.html")
+  fetch("../footer.html")
     .then(res => res.text())
     .then(data => document.getElementById("footer").innerHTML = data);
 </script>

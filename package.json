@@ -1,0 +1,11 @@
+{
+  "name": "wedmepandit-static-site",
+  "private": true,
+  "scripts": {
+    "start": "node dev-server.js",
+    "test:seo": "node tests/seo-regression.js",
+    "test:crawl": "node tests/http-crawl.js",
+    "test:navigation": "node tests/header-navigation.browser.js",
+    "test:phase2": "node tests/phase2.browser.js"
+  }
+}

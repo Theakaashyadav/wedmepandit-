@@ -6,7 +6,9 @@
 /about-us          /about.html                    200
 
 # SERVICES
-/Our-services      /index.html      200
+/services          /service.html                  200
+/Our-services      /services                      301
+/our-services      /services                      301
 
 # GALLERY
 /gallery           /gallery.html                  200
@@ -18,4 +20,6 @@
 /contact           /contact.html                  200
 
 # BLOG DETAILS
-/blogs/open-blog/*    /blog-details.html          200
+/blogs/open-blog/environmental-protection       /blogs/open-blog/environmental-protection/index.html       200
+/blogs/open-blog/sacred-bond-of-marriage        /blogs/open-blog/sacred-bond-of-marriage/index.html        200
+/blogs/open-blog/vedic-hindu-wedding-guide      /blogs/open-blog/vedic-hindu-wedding-guide/index.html      200

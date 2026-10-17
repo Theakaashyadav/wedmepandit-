@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>About Jai Prakash Shastri Ji | Experienced Vedic Pandit</title>
+  <title>About WedMePandit | Vedic Puja &amp; Ceremony Services</title>
 
   <meta name="description" content="Learn about Pandit Jai Prakash Shastri Ji, a trusted Vedic priest with 30+ years of experience in weddings, havan, griha pravesh and Hindu rituals.">
 
@@ -22,7 +22,7 @@
 
   <meta property="og:url" content="https://www.wedmepandit.com/about-us">
 
-  <meta property="og:image" content="https://www.wedmepandit.com/images/logo.png">
+  <meta property="og:image" content="https://www.wedmepandit.com/images/logo1.webp">
 
   <meta name="twitter:card" content="summary_large_image">
 
@@ -434,6 +434,8 @@ img {
   }
 }
 </style>
+  <link rel="stylesheet" href="/phase3.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"AboutPage","url":"https://www.wedmepandit.com/about","name":"About"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.wedmepandit.com/"},{"@type":"ListItem","position":2,"name":"About","item":"https://www.wedmepandit.com/about"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is WedMePandit?","acceptedAnswer":{"@type":"Answer","text":"WedMePandit provides Hindu puja and sanskar information and a direct way to enquire."}},{"@type":"Question","name":"What is the approach to ceremonies?","acceptedAnswer":{"@type":"Answer","text":"Ceremony, family tradition and ritual requirements can be discussed before arrangements are confirmed."}},{"@type":"Question","name":"Which categories are covered?","acceptedAnswer":{"@type":"Answer","text":"The website covers Vivah, Griha Pravesh, Namkaran, Havan, Yagya, festival and Shanti Puja."}},{"@type":"Question","name":"How can I discuss family traditions?","acceptedAnswer":{"@type":"Answer","text":"Use the contact page, phone or WhatsApp and describe the customs relevant to your ceremony."}},{"@type":"Question","name":"Where can I learn more?","acceptedAnswer":{"@type":"Answer","text":"Explore the service pages, ceremony gallery and published ritual guides."}}]}]}</script>
 </head>
 
 <body>
@@ -443,25 +445,23 @@ img {
 <section class="about-section" id="about">
   <div class="about-container">
 
-    <div class="jp-about-card" id="about">
+    <div class="jp-about-card">
   <section class="jp-about-section">
     <div class="jp-about-container">
 
       <!-- Image -->
       <div class="jp-about-image">
         <div class="jp-image-box">
-          <img src="images/Jp.webp" alt="Pandit Ji">
+          <img src="images/Jp.webp" alt="Pandit Ji" width="1024" height="1536" decoding="async" loading="eager" fetchpriority="high">
           <div class="jp-image-badge">30+ Years Experience</div>
         </div>
       </div>
 
       <!-- Content -->
       <div class="jp-about-content">
-        <h2>Jai Prakash Shastri Ji</h2>
+          <h1>About WedMePandit</h1>
 
-        <p class="jp-tagline">
-          Trusted Vedic Pandit for All Religious Ceremonies
-        </p>
+        <p class="jp-tagline">Vedic Puja and Ceremony Guidance</p>
 
         <p>
           Pandit Jai Prakash Shastri (The Family priest of the 14th President of India,
@@ -569,7 +569,7 @@ img {
   </div>
 </section>
 
-<div id="footer"></div>
+<section class="content-band content-band--white"><div class="premium-container"><div class="content-band__intro"><p class="eyebrow">Continue exploring</p><h2>Ceremonies and Guidance</h2></div><nav class="about-quick-links" aria-label="Related pages"><a href="/Services/vivah.html">Vivah Sanskar</a><a href="/Services/sthapna/grihapravesh.html">Griha Pravesh</a><a href="/Services/havanpooja.html">Havan &amp; Pooja</a><a href="/Services/yagya.html">Vedic Yagya</a><a href="/blogs.html">Ritual Guides</a></nav></div></section><section class="faq-section" aria-labelledby="faq-heading"><div class="premium-container"><p class="eyebrow">Helpful answers</p><h2 id="faq-heading">Frequently Asked Questions</h2><div class="faq-list"><details><summary>What is WedMePandit?</summary><p>WedMePandit provides Hindu puja and sanskar information and a direct way to enquire.</p></details><details><summary>What is the approach to ceremonies?</summary><p>Ceremony, family tradition and ritual requirements can be discussed before arrangements are confirmed.</p></details><details><summary>Which categories are covered?</summary><p>The website covers Vivah, Griha Pravesh, Namkaran, Havan, Yagya, festival and Shanti Puja.</p></details><details><summary>How can I discuss family traditions?</summary><p>Use the contact page, phone or WhatsApp and describe the customs relevant to your ceremony.</p></details><details><summary>Where can I learn more?</summary><p>Explore the service pages, ceremony gallery and published ritual guides.</p></details></div></div></section><section class="premium-cta section-space"><div class="premium-container"><h2>Discuss Your Ceremony Requirements</h2><p>Explore the services or contact WedMePandit with your ceremony details.</p><div class="hero-actions"><a class="button button--gold" href="/service.html">Explore Services</a><a class="button button--outline" href="/contact.html">Contact Us</a></div></div></section><div id="footer"></div>
 
 <script>
   // Load Header
@@ -583,7 +583,8 @@ img {
 
       if (menuBtn && navLinks) {
         menuBtn.onclick = () => {
-          navLinks.classList.toggle("show");
+          const isOpen = navLinks.classList.toggle("show");
+            menuBtn.setAttribute("aria-expanded", String(isOpen));
         };
       }
     });

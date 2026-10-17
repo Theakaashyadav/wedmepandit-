@@ -1,0 +1,9 @@
+file,page_type,status,title,description,canonical,h1,remaining_issue
+index.html,Home,Improved,Unique,Unique,Present,Present,Hero alt text needs editorial review
+about.html,About,Improved,Unique,Unique,Present,Added,Claims need owner verification
+blogs.html,Blog listing,Partial,Unique,Unique,Present,Present,Article routing is client rendered
+blog-details.html,Blog template,Pending,Fixed to one article,Fixed to one article,Fixed to one article,Client populated,Needs static route-specific pages
+contact.html,Contact,Improved,Unique,Unique,Present,Added,WhatsApp-only enquiry
+gallery.html,Gallery,Partial,Unique,Unique,Present,Present,Gallery alt text needs manual review
+service.html,Unverified service list,Protected,Unique,Missing,Missing,Present,noindex pending owner confirmation
+Services/*.html,Service pages,Improved,Unique,Unique,Present,Present,Schema and breadcrumbs pending

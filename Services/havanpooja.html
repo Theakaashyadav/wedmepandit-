@@ -2,7 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Janmdivas | Wedmipandit</title>
+  <title>Havan Pooja in Delhi NCR | WedMePandit</title>
+<meta name="description" content="Enquire about traditional Havan Pooja with Vedic mantras and ritual guidance from WedMePandit in Delhi NCR.">
+<link rel="canonical" href="https://www.wedmepandit.com/Services/havanpooja.html">
+<meta property="og:title" content="Havan Pooja in Delhi NCR | WedMePandit">
+<meta property="og:description" content="Enquire about traditional Havan Pooja with Vedic mantras and ritual guidance from WedMePandit in Delhi NCR.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.wedmepandit.com/Services/havanpooja.html">
+<meta property="og:image" content="https://www.wedmepandit.com/images/logo1.webp">
+<meta name="twitter:card" content="summary_large_image">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
 
@@ -82,16 +91,20 @@
     }
 
   </style>
+  <link rel="stylesheet" href="/phase3.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Havan & Pooja Services","url":"https://www.wedmepandit.com/Services/havanpooja.html","provider":{"@type":"Organization","name":"WedMePandit","url":"https://www.wedmepandit.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.wedmepandit.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.wedmepandit.com/services"},{"@type":"ListItem","position":3,"name":"Havan & Pooja Services","item":"https://www.wedmepandit.com/Services/havanpooja.html"}]}</script>
 </head>
 
 <body>
 <div id="header"></div>
+<nav class="service-breadcrumb" aria-label="Breadcrumb"><a href="/index.html">Home</a><span aria-hidden="true">›</span><a href="/service.html">Services</a><span aria-hidden="true">›</span><span aria-current="page">Havan & Pooja Services</span></nav>
 <div class="container">
 
   <!-- CARD -->
   <a href="#vivah-details" class="tv-link">
     <div class="tv-card">
-      <img src="images/s1.webp" alt="Vivah Ceremony">
+<img src="../images/s1.webp" alt="Havan and Pooja ceremony" width="1536" height="1024" decoding="async" loading="eager" fetchpriority="high">
       <div class="tv-info">
         <h3>Vivah (Wedding)</h3>
         <p>Start Your Married Life with Divine Blessings and Perfect Rituals</p>
@@ -100,7 +113,7 @@
   </a>
 
   <div id="havan-details" class="details">
-  <h2>Hawan & Pooja Services</h2>
+<h1>Havan &amp; Pooja Services</h1>
 
   <p>
     Hawan and Pooja are sacred Vedic rituals performed to purify the environment,
@@ -148,6 +161,7 @@
   </div>
 
 </div>
+<section class="site-related" aria-labelledby="related-links-heading"><div class="premium-container"><p class="eyebrow">Continue exploring</p><h2 id="related-links-heading">Related Services and Guides</h2><div class="site-related__links"><a href="/service.html">Explore All Puja Services</a><a href="/Services/namkaran.html">Namkaran Sanskar</a><a href="/blogs.html">Helpful Puja Guides</a><a href="/contact.html">Contact WedMePandit</a></div></div></section>
 <div id="footer"></div>
 
 <script>
@@ -175,7 +189,8 @@
 
       if (menuBtn && navLinks) {
         menuBtn.addEventListener("click", () => {
-          navLinks.classList.toggle("show");
+          const isOpen = navLinks.classList.toggle("show");
+            menuBtn.setAttribute("aria-expanded", String(isOpen));
         });
       }
 

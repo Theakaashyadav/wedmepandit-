@@ -1,0 +1,11 @@
+source,target,status,issue_or_action
+header.html,/,Pass,Crawlable home link
+header.html,/about-us,Pass,Redirect maps to about.html
+header.html,/#service,Fixed,Replaced inconsistent service alias
+header.html,/gallery,Pass,Redirect maps to gallery.html
+header.html,/blogs,Pass,Redirect maps to blogs.html
+header.html,/contact,Pass,Redirect maps to contact.html
+footer.html,Same core targets,Fixed,Service and logo paths corrected
+blogs.html,/blogs/open-blog/*,Partial,Routes render through one client-side template
+index.html,Services/*.html,Pass,Confirmed service cards are crawlable anchors
+service.html,None,Orphan,Kept noindex until services are confirmed

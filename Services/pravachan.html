@@ -2,7 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Pravachan | Wedmipandit</title>
+  <title>Vedic Pravachan in Delhi NCR | WedMePandit</title>
+<meta name="description" content="Enquire about Vedic Pravachan and spiritual discourse for religious gatherings through WedMePandit in Delhi NCR.">
+<link rel="canonical" href="https://www.wedmepandit.com/Services/pravachan.html">
+<meta property="og:title" content="Vedic Pravachan in Delhi NCR | WedMePandit">
+<meta property="og:description" content="Enquire about Vedic Pravachan and spiritual discourse for religious gatherings through WedMePandit in Delhi NCR.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.wedmepandit.com/Services/pravachan.html">
+<meta property="og:image" content="https://www.wedmepandit.com/images/logo1.webp">
+<meta name="twitter:card" content="summary_large_image">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
 
@@ -455,15 +464,19 @@ button {
   }
 }
 </style>
+  <link rel="stylesheet" href="/phase3.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Pravachan","url":"https://www.wedmepandit.com/Services/pravachan.html","provider":{"@type":"Organization","name":"WedMePandit","url":"https://www.wedmepandit.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.wedmepandit.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.wedmepandit.com/services"},{"@type":"ListItem","position":3,"name":"Pravachan","item":"https://www.wedmepandit.com/Services/pravachan.html"}]}</script>
 </head>
 
 <body>
 <div id="header"></div>
+<nav class="service-breadcrumb" aria-label="Breadcrumb"><a href="/index.html">Home</a><span aria-hidden="true">›</span><a href="/service.html">Services</a><span aria-hidden="true">›</span><span aria-current="page">Pravachan</span></nav>
 <div class="container">
 
 <!-- HERO -->
 <div class="hero-card">
-  <img src="../images/s6.webp">
+  <img src="../images/s6.webp" alt="" width="1536" height="1024" decoding="async" loading="eager" fetchpriority="high">
   
   <div class="hero-overlay">
     <div class="hero-content">
@@ -536,12 +549,13 @@ button {
     delivered by experienced Pandit Ji for inner peace, clarity, and spiritual growth.
   </p>
 
-  <button onclick="location.href='../../contact.html'">
+<button onclick="location.href='../contact.html'">
     Book Pravachan Session →
   </button>
 
 </div>
 </div>
+<section class="site-related" aria-labelledby="related-links-heading"><div class="premium-container"><p class="eyebrow">Continue exploring</p><h2 id="related-links-heading">Related Services and Guides</h2><div class="site-related__links"><a href="/service.html">Explore All Puja Services</a><a href="/Services/havanpooja.html">Havan and Yagya Services</a><a href="/Services/namkaran.html">Namkaran Sanskar</a><a href="/blogs.html">Helpful Puja Guides</a><a href="/contact.html">Contact WedMePandit</a></div></div></section>
 <div id="footer"></div>
 
 <script>
@@ -569,7 +583,8 @@ button {
 
       if (menuBtn && navLinks) {
         menuBtn.addEventListener("click", () => {
-          navLinks.classList.toggle("show");
+          const isOpen = navLinks.classList.toggle("show");
+            menuBtn.setAttribute("aria-expanded", String(isOpen));
         });
       }
 
